@@ -5,6 +5,6 @@ class Show < ActiveRecord::Base
   has_many :actors, through: :shows
   
   def actors_list
-    self.actors.collect {|actor| actor.full_name}
+    self.actors.map {|actor| actor.full_name}
   end
 end
